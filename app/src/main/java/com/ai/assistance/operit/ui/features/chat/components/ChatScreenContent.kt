@@ -186,6 +186,7 @@ fun ChatScreenContent(
     val isSpeechPaused by actualViewModel.isSpeechPaused.collectAsState()
     val isAutoReadEnabled by actualViewModel.isAutoReadEnabled.collectAsState()
     LaunchedEffect(isSpeechSessionActive, isSpeechPaused, isAutoReadEnabled) {
+    val frenzyState = rememberFrenzyState()
         AppLogger.d(
             "ChatScreenContent",
             "speechControls session=$isSpeechSessionActive paused=$isSpeechPaused autoRead=$isAutoReadEnabled visible=${isSpeechSessionActive || isSpeechPaused || isAutoReadEnabled}"
@@ -1042,6 +1043,17 @@ fun ChatScreenContent(
                     pendingRewindIndex = null
                     pendingRewindContent = null
                 }
+            )
+        }
+        // frenzy overlay — AI triggered negative mood burst
+        AnimatedVisibility(
+            visible = frenzyState.show,
+            enter = fadeIn(300ms),
+            exit = fadeOut(300ms)
+        ) {
+            FrenzyOverlay(
+                config = frenzyState.config,
+                onDismiss = { frenzyState.dismiss() }
             )
         }
     }
