@@ -187,7 +187,7 @@ fun ChatScreenContent(
     val isAutoReadEnabled by actualViewModel.isAutoReadEnabled.collectAsState()
     LaunchedEffect(isSpeechSessionActive, isSpeechPaused, isAutoReadEnabled) {
     val frenzyState = rememberFrenzyState()
-        AppLogger.d(
+    val frenzyState = rememberFrenzyState()
             "ChatScreenContent",
             "speechControls session=$isSpeechSessionActive paused=$isSpeechPaused autoRead=$isAutoReadEnabled visible=${isSpeechSessionActive || isSpeechPaused || isAutoReadEnabled}"
         )
