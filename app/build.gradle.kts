@@ -191,6 +191,33 @@ android {
     sourceSets {
         getByName("main") {
             assets.setSrcDirs(listOf(generatedMainAssetsDir.get().asFile))
+            java {
+                // [NDK/ffmpeg 禁用] 排除引用缺失模块的源文件
+                exclude("com/ai/assistance/operit/api/chat/llmprovider/AIServiceFactory.kt")
+                exclude("com/ai/assistance/operit/api/chat/llmprovider/LlamaProvider.kt")
+                exclude("com/ai/assistance/operit/api/chat/llmprovider/MNNProvider.kt")
+                exclude("com/ai/assistance/operit/api/speech/SherpaMnnSpeechProvider.kt")
+                exclude("com/ai/assistance/operit/core/avatar/common/model/AvatarType.kt")
+                exclude("com/ai/assistance/operit/core/avatar/common/model/ISkeletalAvatarModel.kt")
+                exclude("com/ai/assistance/operit/core/avatar/impl/dragonbones/**")
+                exclude("com/ai/assistance/operit/core/avatar/impl/fbx/**")
+                exclude("com/ai/assistance/operit/core/avatar/impl/mmd/**")
+                exclude("com/ai/assistance/operit/core/avatar/impl/factory/AvatarControllerFactoryImpl.kt")
+                exclude("com/ai/assistance/operit/core/avatar/impl/factory/AvatarModelFactoryImpl.kt")
+                exclude("com/ai/assistance/operit/core/avatar/impl/factory/AvatarRendererFactoryImpl.kt")
+                exclude("com/ai/assistance/operit/core/tools/defaultTool/standard/StandardFFmpegTool.kt")
+                exclude("com/ai/assistance/operit/core/tools/javascript/JsEngine.kt")
+                exclude("com/ai/assistance/operit/data/model/DragonBones.kt")
+                exclude("com/ai/assistance/operit/data/repository/AvatarRepository.kt")
+                exclude("com/ai/assistance/operit/services/floating/FloatingWindowState.kt")
+                exclude("com/ai/assistance/operit/ui/components/ManagedDragonBonesView.kt")
+                exclude("com/ai/assistance/operit/ui/features/about/screens/OpenSourceLicenses.kt")
+                exclude("com/ai/assistance/operit/ui/features/assistant/screens/AssistantConfigScreen.kt")
+                exclude("com/ai/assistance/operit/ui/features/settings/screens/MnnModelDownloadScreen.kt")
+                exclude("com/ai/assistance/operit/util/FFmpegUtil.kt")
+                exclude("com/ai/assistance/operit/util/LatexMathMlConverter.kt")
+                exclude("com/ai/assistance/operit/util/ToolPkgJsAstMinifier.kt")
+            }
         }
     }
 
@@ -390,7 +417,8 @@ dependencies {
     implementation("com.google.android.filament:filament-utils-android:1.69.2")
     implementation(libs.androidx.ui.graphics.android)
     // The only vendored artifact is the custom FFmpegKit AAR.
-    implementation(files("libs/ffmpeg-kit-local.aar"))
+    // [NDK禁用] ffmpeg-kit-local.aar 是空壳(无classes.jar) — 同时排除引用源文件
+    // implementation(files("libs/ffmpeg-kit-local.aar"))
     implementation("com.arthenica:smart-exception-common:0.2.1")
     implementation("com.arthenica:smart-exception-java:0.2.1")
     implementation(libs.androidx.runtime.android)
