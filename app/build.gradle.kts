@@ -211,11 +211,11 @@ android {
         }
     }
 
-    externalNativeBuild {
-        cmake {
-            path = file("src/main/cpp/CMakeLists.txt")
-        }
-    }
+// [NDK禁用]     externalNativeBuild {
+// [NDK禁用]         cmake {
+// [NDK禁用]             path = file("src/main/cpp/CMakeLists.txt")
+// [NDK禁用]         }
+// [NDK禁用]     }
 
     defaultConfig {
         applicationId = "com.ai.assistance.operit"
@@ -229,18 +229,18 @@ android {
             useSupportLibrary = true
         }
         
-        ndk {
-            // Explicitly specify the ABIs we package for the app process.
-            // terminal now also ships x86_64 runtime binaries for the Android Studio emulator,
-            // while the rest of the app remains primarily ARM-focused.
-            abiFilters.addAll(listOf("arm64-v8a"))
-        }
+// [NDK禁用]         ndk {
+// [NDK禁用]             // Explicitly specify the ABIs we package for the app process.
+// [NDK禁用]             // terminal now also ships x86_64 runtime binaries for the Android Studio emulator,
+// [NDK禁用]             // while the rest of the app remains primarily ARM-focused.
+// [NDK禁用]             abiFilters.addAll(listOf("arm64-v8a"))
+// [NDK禁用]         }
 
-        externalNativeBuild {
-            cmake {
-                cppFlags("-std=c++17")
-            }
-        }
+// [NDK禁用]         externalNativeBuild {
+// [NDK禁用]             cmake {
+// [NDK禁用]                 cppFlags("-std=c++17")
+// [NDK禁用]             }
+// [NDK禁用]         }
 
     }
 
@@ -371,14 +371,14 @@ kotlin {
 
 dependencies {
     implementation("com.github.jelmerk:hnswlib-core:1.2.1")
-    implementation(project(":dragonbones"))
+// [NDK禁用]     implementation(project(":dragonbones"))
     implementation(project(":terminal"))
-    implementation(project(":mnn"))
-    implementation(project(":llama"))
-    implementation(project(":mmd"))
-    implementation(project(":fbx"))
+// [NDK禁用]     implementation(project(":mnn"))
+// [NDK禁用]     implementation(project(":llama"))
+// [NDK禁用]     implementation(project(":mmd"))
+// [NDK禁用]     implementation(project(":fbx"))
     implementation(project(":showerclient"))
-    implementation(project(":quickjs"))
+// [NDK禁用]     implementation(project(":quickjs"))
 
     // glTF runtime rendering (Filament)
     implementation("com.google.android.filament:filament-android:1.69.2")
