@@ -186,7 +186,7 @@ kapt {
 
 android {
     namespace = "com.ai.assistance.operit"
-    compileSdk = 36
+    compileSdk = 37
 
     sourceSets {
         getByName("main") {
