@@ -62,7 +62,6 @@ jobs:
             com/ai/assistance/operit/core/avatar/impl/factory/AvatarModelFactoryImpl.kt \
             com/ai/assistance/operit/core/avatar/impl/factory/AvatarRendererFactoryImpl.kt \
             com/ai/assistance/operit/core/tools/defaultTool/standard/StandardFFmpegTool.kt \
-            com/ai/assistance/operit/core/tools/javascript/JsEngine.kt \
             com/ai/assistance/operit/ui/components/ManagedDragonBonesView.kt \
             com/ai/assistance/operit/ui/features/assistant/screens/AssistantConfigScreen.kt \
             com/ai/assistance/operit/ui/features/settings/screens/MnnModelDownloadScreen.kt \
