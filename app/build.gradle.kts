@@ -191,37 +191,37 @@ android {
     sourceSets {
         getByName("main") {
             assets.setSrcDirs(listOf(generatedMainAssetsDir.get().asFile))
-            java {
-                // [NDK/ffmpeg 禁用] 排除引用缺失模块的源文件
-                exclude(listOf(
-                    "com/ai/assistance/operit/api/chat/llmprovider/AIServiceFactory.kt",
-                    "com/ai/assistance/operit/api/chat/llmprovider/LlamaProvider.kt",
-                    "com/ai/assistance/operit/api/chat/llmprovider/MNNProvider.kt",
-                    "com/ai/assistance/operit/api/speech/SherpaMnnSpeechProvider.kt",
-                    "com/ai/assistance/operit/core/avatar/common/model/AvatarType.kt",
-                    "com/ai/assistance/operit/core/avatar/common/model/ISkeletalAvatarModel.kt",
-                    "com/ai/assistance/operit/core/avatar/impl/dragonbones/**",
-                    "com/ai/assistance/operit/core/avatar/impl/fbx/**",
-                    "com/ai/assistance/operit/core/avatar/impl/mmd/**",
-                    "com/ai/assistance/operit/core/avatar/impl/factory/AvatarControllerFactoryImpl.kt",
-                    "com/ai/assistance/operit/core/avatar/impl/factory/AvatarModelFactoryImpl.kt",
-                    "com/ai/assistance/operit/core/avatar/impl/factory/AvatarRendererFactoryImpl.kt",
-                    "com/ai/assistance/operit/core/tools/defaultTool/standard/StandardFFmpegTool.kt",
-                    "com/ai/assistance/operit/core/tools/javascript/JsEngine.kt",
-                    "com/ai/assistance/operit/data/model/DragonBones.kt",
-                    "com/ai/assistance/operit/data/repository/AvatarRepository.kt",
-                    "com/ai/assistance/operit/services/floating/FloatingWindowState.kt",
-                    "com/ai/assistance/operit/ui/components/ManagedDragonBonesView.kt",
-                    "com/ai/assistance/operit/ui/features/about/screens/OpenSourceLicenses.kt",
-                    "com/ai/assistance/operit/ui/features/assistant/screens/AssistantConfigScreen.kt",
-                    "com/ai/assistance/operit/ui/features/settings/screens/MnnModelDownloadScreen.kt",
-                    "com/ai/assistance/operit/util/FFmpegUtil.kt",
-                    "com/ai/assistance/operit/util/LatexMathMlConverter.kt",
-                    "com/ai/assistance/operit/util/ToolPkgJsAstMinifier.kt",
-                ))
-            }
+
         }
     }
+
+    // [NDK/ffmpeg 禁用] 排除引用缺失模块的源文件
+    sourceSets["main"].java.exclude(listOf(
+        "com/ai/assistance/operit/api/chat/llmprovider/AIServiceFactory.kt",
+        "com/ai/assistance/operit/api/chat/llmprovider/LlamaProvider.kt",
+        "com/ai/assistance/operit/api/chat/llmprovider/MNNProvider.kt",
+        "com/ai/assistance/operit/api/speech/SherpaMnnSpeechProvider.kt",
+        "com/ai/assistance/operit/core/avatar/common/model/AvatarType.kt",
+        "com/ai/assistance/operit/core/avatar/common/model/ISkeletalAvatarModel.kt",
+        "com/ai/assistance/operit/core/avatar/impl/dragonbones/**",
+        "com/ai/assistance/operit/core/avatar/impl/fbx/**",
+        "com/ai/assistance/operit/core/avatar/impl/mmd/**",
+        "com/ai/assistance/operit/core/avatar/impl/factory/AvatarControllerFactoryImpl.kt",
+        "com/ai/assistance/operit/core/avatar/impl/factory/AvatarModelFactoryImpl.kt",
+        "com/ai/assistance/operit/core/avatar/impl/factory/AvatarRendererFactoryImpl.kt",
+        "com/ai/assistance/operit/core/tools/defaultTool/standard/StandardFFmpegTool.kt",
+        "com/ai/assistance/operit/core/tools/javascript/JsEngine.kt",
+        "com/ai/assistance/operit/data/model/DragonBones.kt",
+        "com/ai/assistance/operit/data/repository/AvatarRepository.kt",
+        "com/ai/assistance/operit/services/floating/FloatingWindowState.kt",
+        "com/ai/assistance/operit/ui/components/ManagedDragonBonesView.kt",
+        "com/ai/assistance/operit/ui/features/about/screens/OpenSourceLicenses.kt",
+        "com/ai/assistance/operit/ui/features/assistant/screens/AssistantConfigScreen.kt",
+        "com/ai/assistance/operit/ui/features/settings/screens/MnnModelDownloadScreen.kt",
+        "com/ai/assistance/operit/util/FFmpegUtil.kt",
+        "com/ai/assistance/operit/util/LatexMathMlConverter.kt",
+        "com/ai/assistance/operit/util/ToolPkgJsAstMinifier.kt",
+    ))
 
     signingConfigs {
         val releaseKeystorePath = localProperties.getProperty("RELEASE_STORE_FILE")
