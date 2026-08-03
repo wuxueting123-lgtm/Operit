@@ -179,6 +179,10 @@ val syncMainAssets by tasks.registering(Sync::class) {
     from(generatedSttModelAssetsDir)
     into(generatedMainAssetsDir)
 }
+kapt {
+    correctErrorTypes = true
+}
+
 
 android {
     namespace = "com.ai.assistance.operit"
