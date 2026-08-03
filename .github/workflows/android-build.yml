@@ -49,8 +49,6 @@ jobs:
             com/ai/assistance/operit/api/chat/llmprovider/LlamaProvider.kt \
             com/ai/assistance/operit/api/chat/llmprovider/MNNProvider.kt \
             com/ai/assistance/operit/api/speech/SherpaMnnSpeechProvider.kt \
-            com/ai/assistance/operit/core/avatar/common/model/AvatarType.kt \
-            com/ai/assistance/operit/core/avatar/common/model/ISkeletalAvatarModel.kt \
             com/ai/assistance/operit/core/avatar/impl/dragonbones/control/DragonBonesAvatarController.kt \
             com/ai/assistance/operit/core/avatar/impl/dragonbones/model/DragonBonesAvatarModel.kt \
             com/ai/assistance/operit/core/avatar/impl/dragonbones/view/DragonBonesRenderer.kt \
@@ -65,14 +63,9 @@ jobs:
             com/ai/assistance/operit/core/avatar/impl/factory/AvatarRendererFactoryImpl.kt \
             com/ai/assistance/operit/core/tools/defaultTool/standard/StandardFFmpegTool.kt \
             com/ai/assistance/operit/core/tools/javascript/JsEngine.kt \
-            com/ai/assistance/operit/data/model/DragonBones.kt \
-            com/ai/assistance/operit/data/repository/AvatarRepository.kt \
-            com/ai/assistance/operit/services/floating/FloatingWindowState.kt \
             com/ai/assistance/operit/ui/components/ManagedDragonBonesView.kt \
-            com/ai/assistance/operit/ui/features/about/screens/OpenSourceLicenses.kt \
             com/ai/assistance/operit/ui/features/assistant/screens/AssistantConfigScreen.kt \
             com/ai/assistance/operit/ui/features/settings/screens/MnnModelDownloadScreen.kt \
-            com/ai/assistance/operit/util/FFmpegUtil.kt \
             com/ai/assistance/operit/util/LatexMathMlConverter.kt \
             com/ai/assistance/operit/util/ToolPkgJsAstMinifier.kt \
           ; do
