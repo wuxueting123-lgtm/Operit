@@ -68,6 +68,8 @@ jobs:
             com/ai/assistance/operit/ui/features/settings/screens/MnnModelDownloadScreen.kt \
             com/ai/assistance/operit/util/LatexMathMlConverter.kt \
             com/ai/assistance/operit/util/ToolPkgJsAstMinifier.kt \
+            com/ai/assistance/operit/data/repository/AvatarRepository.kt \
+            com/ai/assistance/operit/util/FFmpegUtil.kt \
           ; do
             [ -f "$f" ] && mv "$f" "$f.bak" && echo "renamed: $f" || echo "skip: $f"
           done
